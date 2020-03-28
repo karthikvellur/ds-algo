@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class binarySearch {
 
     // Time complexity: O(log n)
+    // Expln: https://www.javatpoint.com/binary-search-in-java
     // Analysis: https://hackernoon.com/what-does-the-time-complexity-o-log-n-actually-mean-45f94bb5bfbf
 
     public static void main(String[] args){
