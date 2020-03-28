@@ -1,6 +1,8 @@
-package insertionSort;
+package sorting.insertionSort;
 
 public class InsertionSort {
+
+    // Time Complexity: O(log n)
 
     public static void main(String[] args){
 
@@ -23,7 +25,7 @@ public class InsertionSort {
                 array[i+1] = array[i];
                 i--;
             }
-            array[i+1] = key; // We are storing key in 1+1 because i would have been decremented prior to the condition becoming false in while looop
+            array[i+1] = key; // We are storing key in 1+1 because i would have been decremented prior to the condition becoming false in while loop
         }
 
         for(int i=0;i<array.length;i++)
