@@ -14,12 +14,12 @@ class Node{
 
 public class bst {
 
-    public static Node insert(Node root, int key){
+    public static Node insertRecur(Node root, int key){
         if(root == null)
             return new Node(key);
 
         if(key < root.data)
-            root.left = insert(root.left, key);
+            root.left = insertRecur(root.left, key);
         /**
          * "root.left" is passed as root so that new Node is created & calls are recursively called to the point root.left is null
          * "root.left" is assigned so that the actual updation is done
@@ -27,10 +27,35 @@ public class bst {
          **/
 
         if(key > root.data)
-            root.right = insert(root.right, key);
+            root.right = insertRecur(root.right, key);
 
         return root;
 
+    }
+
+    public static Node insertIterative(Node root, int key){
+        Node curr = root;
+        Node parent = null;
+
+        if(root == null)
+            return new Node(key);
+
+        while (curr != null){
+
+            parent = curr;
+
+            if(key < curr.data)
+                curr = curr.left;
+            else
+                curr = curr.right;
+        }
+
+        if( key < parent.data)
+            parent.left = new Node(key);
+        else if (key > parent.data)
+            parent.right = new Node(key);
+
+        return root;
     }
 
     public static void inOrderTraversal(Node root){
@@ -44,14 +69,20 @@ public class bst {
 
     public static void main(String[] args){
 
-        Node root = null;
+        Node rootRecur = null;
         int[] keys = {2,98,34,31,67};
-
         for(int key: keys){
-            root = insert(root, key);
+            rootRecur = insertRecur(rootRecur, key);
         }
+        System.out.println("In order traversal for insertion via recursion");
+        inOrderTraversal(rootRecur);
 
-        inOrderTraversal(root);
+        Node rootIter = null;
+        for(int key: keys){
+            rootIter = insertIterative(rootIter, key);
+        }
+        System.out.println("In order traversal for insertion via iteration");
+        inOrderTraversal(rootIter);
 
     }
 }
