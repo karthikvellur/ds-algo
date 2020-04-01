@@ -35,6 +35,7 @@ public class string {
             System.out.println("String is not a palindrome");
     }
 
+    // Time complexity: Generically you can consider the complexity to be O(N) even though inner loop is starting with i+1
     static void checkIfAllCharsAreUnique(String str){
         if(str == null || str.length() == 0){
             System.out.println("String is null or empty");
