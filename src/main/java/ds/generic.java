@@ -4,8 +4,14 @@ public class generic {
 
     public static void main(String[] args){
 //        isNumberPrime(1);
+
 //        System.out.println("Factorial: " + factorial(3));
-        reverseArray();
+
+//        reverseArray();
+
+        System.out.println("Fibonacci via recursion: " + fibonacciRecur(4));
+        fibonacciIterative(4);
+
     }
 
     // Time Complexity: O(sqrt(N)): The for loop wi ll start when i = 2 and end when i * i = n. Or, in other words, it stops when x = sqrt(n)
@@ -53,5 +59,31 @@ public class generic {
         for(int i=0; i<arr.length; i++){
             System.out.println(arr[i]);
         }
+    }
+
+    static int fibonacciRecur(int num){
+        if(num <= 0)
+            return 0;
+        if(num == 1)
+            return 1;
+        return fibonacciRecur(num-1) + fibonacciRecur(num-2);
+    }
+
+    static void fibonacciIterative(int num){
+        int fib = 0;
+        if( num <= 0)
+            fib = 0;
+        else if (num == 1)
+            fib = 1;
+        else {
+            fib = 1;
+            int prevFib = 1;
+            for(int i=2; i<num; i++){
+                int temp = fib;
+                fib = fib  + prevFib;
+                prevFib = temp;
+            }
+        }
+        System.out.println("Fibonacci, iterative method: " + fib);
     }
 }

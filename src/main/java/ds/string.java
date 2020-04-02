@@ -4,9 +4,10 @@ public class string {
 
     public static void main(String[] args){
         String str = "madam";
-
 //        isPalindrome(str);
-        checkIfAllCharsAreUnique(str);
+
+//        checkIfAllCharsAreUnique(str);
+
 
     }
 
@@ -63,4 +64,6 @@ public class string {
             System.out.println("String characters are unique");
 
     }
+
+    // Finding permutations of a string - https://www.javatpoint.com/program-to-find-all-permutations-of-a-string - Need to write java program
 }
