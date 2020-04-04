@@ -1,13 +1,11 @@
 package ds;
 
-public class generic {
+public class math {
 
     public static void main(String[] args){
 //        isNumberPrime(1);
 
 //        System.out.println("Factorial: " + factorial(3));
-
-//        reverseArray();
 
         System.out.println("Fibonacci via recursion: " + fibonacciRecur(4));
         fibonacciIterative(4);
@@ -42,24 +40,7 @@ public class generic {
 
     }
 
-    // Reversing an array
-    // Time complexity: O(N) - Even though loop goes through only half the array it does not impact the O complexity
-    static void reverseArray(){
-        int arr[] = {2, 4, 7, 90, 10};
 
-        int newIndex;
-        int temp;
-        for(int i=0; i<(arr.length / 2); i++){ // Here only half the array has to be traversed since by mid of array, array is actually is reversed. If it is done for full length, then elements will come back to its original place
-            newIndex = arr.length - 1 - i;
-            temp = arr[i];
-            arr[i] = arr[newIndex];
-            arr[newIndex] = temp;
-        }
-
-        for(int i=0; i<arr.length; i++){
-            System.out.println(arr[i]);
-        }
-    }
 
     static int fibonacciRecur(int num){
         if(num <= 0)
