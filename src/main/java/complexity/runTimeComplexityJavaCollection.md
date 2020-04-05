@@ -3,8 +3,8 @@ Below are the Big O performance of common functions of different Java Collection
 
 List                     | Add  | Remove | Get  | Contains | Next | Data Structure | Order
 -------------------------|------|--------|------|----------|------|--------------- | -----
-**ArrayList**            | O(1) |  O(n)  | O(1) |   O(n)   | O(1) | Array          | Ordered
-**LinkedList**           | O(1) |  O(n)  | O(n) |   O(n)   | O(1) | Linked List    | Ordered
+**ArrayList**            | O(1) |  O(n)  | O(1) |   O(n)   | O(1) | Array          | Insertion order maintained
+**LinkedList**           | O(1) |  O(n)  | O(n) |   O(n)   | O(1) | Linked List    | Insertion order maintained
 CopyOnWriteArrayList     | O(n) |  O(n)  | O(1) |   O(n)   | O(1) | Array
 
 
@@ -18,10 +18,10 @@ EnumSet                   | O(1)     | O(1)     | O(1)     | O(1)     | O(1) | B
 CopyOnWriteArraySet       | O(n)     | O(n)     | O(n)     | O(1)     | O(1) | Array
 ConcurrentSkipListSet     | O(log n) | O(log n) | O(log n) | O(1)     | O(n) | Skip List
 
-Map                       |   Get    | ContainsKey |   Next   | Data Structure
---------------------------|----------|-------------|----------|-------------------------
-**HashMap**               | O(1)     |   O(1)      | O(h / n) | Hash Table (h is table capacity)
-**LinkedHashMap**         | O(1)     |   O(1)      | O(1)     | Hash Table + Linked List
+Map                       |   Get    | ContainsKey |   Next   | Data Structure                  | Order
+--------------------------|----------|-------------|----------|---------------------------------| -----
+**HashMap**               | O(1)     |   O(1)      | O(h / n) | Hash Table (h is table capacity)|
+**LinkedHashMap**         | O(1)     |   O(1)      | O(1)     | Hash Table + Linked List        | Insertion order maintained
 IdentityHashMap           | O(1)     |   O(1)      | O(h / n) | Array (h is table capacity)
 WeakHashMap               | O(1)     |   O(1)      | O(h / n) | Hash Table
 EnumMap                   | O(1)     |   O(1)      | O(1)     | Array
