@@ -1,8 +1,31 @@
 package sorting;
 
-// Reference: https://algorithms.tutorialhorizon.com/heap-sort-java-implementation/
-// Time complexity: O(N * log N)
+/**
+ * Explanation: https://www.geeksforgeeks.org/heap-sort/
+ * 1) Max heap explanation: https://www.geeksforgeeks.org/max-heap-in-java/
+ *  -- Binary tree where in child nodes are less than parent node
+ * 2) Min heap - vice versa of Max heap
+ * Implementation: https://algorithms.tutorialhorizon.com/heap-sort-java-implementation/
+ *
+ * Time complexity: O(N * log N)
+ */
 
+/**
+ * Psuedo-code
+ *  PROGRAM: Heap Sort
+ *
+ *   Step 1: heapify(array, heapSize, index)
+ *     - Ensure max heap is followed at the index for the heapsize specified
+ *
+ *   Step 2: sort(array)
+ *     FOR i = array size to 0
+ *        Swap i with first element in array
+ *        Reduce heapsize by 1 and heapify array
+ *     ENDFOR
+ *
+ *  END
+ *
+ */
 public class heapSort {
 
     public static void main(String[] args){

@@ -21,6 +21,35 @@ public class binarySearch {
 
     }
 
+
+    /**
+     * Psuedo code:
+     * PROGRAM: BinarySearch
+     *  BinarySearch(array, value, lowerIndex, upperIndex){
+     *      IF upperIndex >= lowerIndex
+     *         mid = (lowerIndex + upperIndex) / 2
+     *
+     *         IF array[MID] == value
+     *              return MID
+     *         ELSE IF value > array[MID]
+     *              BinarySearch(array, value, MID+1, upperIndex)
+     *         ELSE
+     *              BinarySearch(array, value, lowerIndex, MID-1)
+     *         END IF
+     *
+     *     END IF
+     *
+     *     return -1 // Indicates value not found
+     *  }
+     *
+     *
+     *
+     * @param lowerIndex
+     * @param upperIndex
+     * @param key
+     * @param array
+     * @return
+     */
     static boolean binarySearchRecursion(int lowerIndex, int upperIndex, int key, int[] array){
         int mid = (lowerIndex + upperIndex) / 2;
 
