@@ -8,9 +8,42 @@ public class string {
 
 //        checkIfAllCharsAreUnique(str);
 
-        searchSubStringBruteForce();
+//        searchSubStringBruteForce();
+
+        String str = "ABC";
+        permutationsOfString(str, 0, str.length()-1);
 
 
+    }
+
+    /**
+     * Reference: https://www.javatpoint.com/program-to-find-all-permutations-of-a-string
+     *            https://youtu.be/AfxHGNRtFac
+     * Need to go through it properly and also go through the video to understand it correctly
+     *
+     *
+     * @param str
+     * @param left
+     * @param right
+     */
+    static void permutationsOfString(String str, int left, int right){
+        if(left == right)
+            System.out.println(str);
+        else {
+            for(int i=left; i<=right; i++){
+                str = swap(str, left, i);
+                permutationsOfString(str, left+1, right);
+                str = swap(str, left, i);
+            }
+        }
+    }
+
+    static String swap(String str, int i, int j){
+        char[] chars = str.toCharArray();
+        char temp = chars[i];
+        chars[i] = chars[j];
+        chars[j] = temp;
+        return String.valueOf(chars);
     }
 
     static void searchSubStringBruteForce(){
