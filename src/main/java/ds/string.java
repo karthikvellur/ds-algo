@@ -3,12 +3,36 @@ package ds;
 public class string {
 
     public static void main(String[] args){
-        String str = "madam";
+//        String str = "madam";
 //        isPalindrome(str);
 
 //        checkIfAllCharsAreUnique(str);
 
+        searchSubStringBruteForce();
 
+
+    }
+
+    static void searchSubStringBruteForce(){
+        String textStr = "I live in bangalore";
+        String patStr = "live";
+        char[] text = textStr.toCharArray();
+        char[] pattern = patStr.toCharArray();
+        boolean found = false;
+        for(int i=0;i<text.length;i++){
+            int j = 0;
+            while(j<pattern.length && pattern[j] == text[i+j]){
+                j++;
+            }
+
+            if(j == pattern.length)
+                found = true;
+        }
+
+        if(found)
+            System.out.println("Pattern found");
+        else
+            System.out.println("Patttern not found");
     }
 
     static void isPalindrome(String str){

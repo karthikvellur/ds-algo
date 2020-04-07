@@ -7,8 +7,10 @@ public class math {
 
 //        System.out.println("Factorial: " + factorial(3));
 
-        System.out.println("Fibonacci via recursion: " + fibonacciRecur(4));
-        fibonacciIterative(4);
+//        System.out.println("Fibonacci via recursion: " + fibonacciRecur(4));
+//        fibonacciIterative(4);
+
+        seiveOfEratosthenes();
 
     }
 
@@ -26,6 +28,28 @@ public class math {
 
             if(isPrime)
                 System.out.println("Number is prime");
+        }
+    }
+
+    // Efficiency : O(N * N)
+    static void seiveOfEratosthenes(){
+        int n = 10;
+        boolean[] arr = new boolean[n];
+        for(int i=2; i<n; i++){
+            arr[i] = true;
+        }
+
+        for(int i=2; i<n; i++){
+            if(arr[i] != false){
+                for(int j=i; i*j<n; j++){
+                    arr[i*j] = false;
+                }
+            }
+        }
+
+        for(int i=2; i<n; i++){
+            if(arr[i])
+                System.out.println(i);
         }
     }
 
