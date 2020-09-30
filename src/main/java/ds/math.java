@@ -10,7 +10,7 @@ public class math {
 //        System.out.println("Fibonacci via recursion: " + fibonacciRecur(4));
 //        fibonacciIterative(4);
 
-        seiveOfEratosthenes();
+        sieveOfEratosthenes();
 
     }
 
@@ -32,7 +32,7 @@ public class math {
     }
 
     // Efficiency : O(N * N)
-    static void seiveOfEratosthenes(){
+    static void sieveOfEratosthenes(){
         int n = 10;
         boolean[] arr = new boolean[n];
         for(int i=2; i<n; i++){
