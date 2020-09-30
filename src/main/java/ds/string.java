@@ -13,8 +13,38 @@ public class string {
 //        String str = "ABC";
 //        permutationsOfString(str, 0, str.length()-1);
 
-        reverseString(new char[]{'h', 'e', 'l', 'l', 'o', 'p'});
+//        reverseString(new char[]{'h', 'e', 'l', 'l', 'o', 'p'});
 
+        // isSubSequence present
+        // https://www.geeksforgeeks.org/given-two-strings-find-first-string-subsequence-second/
+        String str1 = "AXY";
+        String str2 = "YADXCP";
+        int m = str1.length();
+        int n = str2.length();
+        boolean res = isSubSequence(str1, str2, m, n);
+        if(res)
+            System.out.println("Yes");
+        else
+            System.out.println("No");
+
+    }
+
+    //TODO Finding permutations of a string - https://www.javatpoint.com/program-to-find-all-permutations-of-a-string - Need to write java program
+
+    static boolean isSubSequence(String str1, String str2, int m, int n)
+    {
+        // Base Cases
+        if (m == 0)
+            return true;
+        if (n == 0)
+            return false;
+
+        // If last characters of two strings are matching
+        if (str1.charAt(m-1) == str2.charAt(n-1))
+            return isSubSequence(str1, str2, m-1, n-1);
+
+        // If last characters are not matching
+        return isSubSequence(str1, str2, m, n-1);
     }
 
     /**
@@ -138,6 +168,4 @@ public class string {
             System.out.println(ch);
         }
     }
-
-    // Finding permutations of a string - https://www.javatpoint.com/program-to-find-all-permutations-of-a-string - Need to write java program
 }
