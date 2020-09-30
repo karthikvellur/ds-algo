@@ -10,9 +10,10 @@ public class string {
 
 //        searchSubStringBruteForce();
 
-        String str = "ABC";
-        permutationsOfString(str, 0, str.length()-1);
+//        String str = "ABC";
+//        permutationsOfString(str, 0, str.length()-1);
 
+        reverseString(new char[]{'h', 'e', 'l', 'l', 'o', 'p'});
 
     }
 
@@ -120,6 +121,22 @@ public class string {
         if(unique)
             System.out.println("String characters are unique");
 
+    }
+
+    static void reverseString(char[] s) {
+        int i = s.length-1;
+        int j = 0;
+        while(i > 1){
+            char temp = s[i];
+            s[i] = s[j];
+            s[j] = temp;
+            i--;
+            j++;
+        }
+        System.out.println("Reversed String: ");
+        for ( char ch: s) {
+            System.out.println(ch);
+        }
     }
 
     // Finding permutations of a string - https://www.javatpoint.com/program-to-find-all-permutations-of-a-string - Need to write java program
