@@ -7,6 +7,7 @@ function mergeIntervals(array) {
     if(array.length < 2)
         return array;
 
+    // Sort based on start value of each interval, hence the compare function is subtracting only first index of both params
     array.sort((a, b) => a[0] - b[0]);
 
     let startTime = array[0][0];
@@ -19,8 +20,9 @@ function mergeIntervals(array) {
         curStart = array[i][0];
         curEnd = array[i][1];
 
-        if(curStart <= endTime){
-            // Main condition is this "if" statement where is we identify if there exists any interval whose start is less than or equal to the defined "endTime",
+        if(endTime >= curStart){ // Reversed the condition (to what is specified in medium article) so that it is easy to read
+            // Main condition is this "if" statement where in we identify that endTime is greater than or equal to "start of current interval"
+            // if there exists any interval whose start is less than or equal to the defined "endTime",
             // that means it is a merged interval
             endTime = Math.max(endTime, curEnd);
         }else{
