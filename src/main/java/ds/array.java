@@ -1,15 +1,19 @@
 package ds;
 
+import java.util.HashSet;
+
 public class array {
 
     public static void main(String[] args){
 
+        verifyTwoNumberSumExists(new int[]{2,4,5,1}, 9);
+
         // reverseArray();
 
         // Reference: https://www.geeksforgeeks.org/equilibrium-index-of-an-array/
-        int arr[] = {-7, 1, 5, 2, -4, 3, 0};
-        System.out.println("Equilibrium of array using index of each array element: " + findEquilibriumOfArr_forEachIndex(arr)); ;
-        System.out.println("Equilibrium of array sum(right sum) & leftSum: " + findEquilibrium_efficientWay(arr)); ;
+//        int arr[] = {-7, 1, 5, 2, -4, 3, 0};
+//        System.out.println("Equilibrium of array using index of each array element: " + findEquilibriumOfArr_forEachIndex(arr)); ;
+//        System.out.println("Equilibrium of array sum(right sum) & leftSum: " + findEquilibrium_efficientWay(arr)); ;
 
     }
 
@@ -73,5 +77,19 @@ public class array {
         }
 
         return -1;
+    }
+
+    // https://practice.geeksforgeeks.org/viewSol.php?subId=b37e82c707a7965ea7c5234a81987f4e&pid=703092&user=karthikvn23
+    static void verifyTwoNumberSumExists(int[] arr, int sum){
+        int temp;
+        HashSet<Integer> tempSet = new HashSet<Integer>();
+
+        for(int i=0; i<arr.length; i++){
+            temp = sum - arr[i];
+            if(tempSet.contains(temp)){
+                System.out.println(String.format("Numbers whose sum equal to given result sum: %d, %d", arr[i], temp));
+            }
+            tempSet.add(arr[i]);
+        }
     }
 }
